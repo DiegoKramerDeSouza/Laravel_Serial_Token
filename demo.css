@@ -1,0 +1,38 @@
+div.row {
+    margin-bottom: 120px;
+    padding: 20px;
+}
+
+.btn {
+    margin-top: 25px;
+}
+
+.d-none {
+    display: none;
+}
+
+.destaque {
+    border: 1px solid red;
+}
+
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.page-header {
+    min-height: 400px;
+}
+
+#sync {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Serial Port Monitor</title>
+
+    <link rel="stylesheet" href="themes/materialize.min.css">
+    <link rel="stylesheet" href="themes/font-awesome.min.css">
+    <link rel="stylesheet" href="themes/materialicons.css">
+    <link rel="stylesheet" href="demo.css">
+
+    <script src="themes/jquery-3.1.1.min.js"></script>
+    <script src="themes/materialize.min.js"></script>
+    <script src="build/demo.js"></script>
+
+</head>
+
+<body class="grey darken-2">
+
+    <header>
+        <nav class="nav-wrapper grey darken-4">
+            <span class='brand-logo center'>
+				<span class='white-text'><b>&nbsp;&nbsp;<span class='blue-text'>Web</span>Tv</b>
+            </span>
+            </span>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div id="sync" class="white-text d-none">
+            <h6>Sincronizando com WebTv <i class="fa fa-refresh fa-spin fa-fw blue-text"></i></h6>
+        </div>
+        <br>
+        <div class="page-header card z-depth-5">
+
+            <div id="request"></div>
+
+            <div id="loader" class="d-none1 center">
+                <i class="material-icons large blue-text center">usb</i>
+                <h5>Aguarde enquanto o token de autenticação é validado</h5>
+                <h5>Validando token...</h5>
+                <div class="preloader-wrapper big active center">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="inform" class="row">
+                <div id="result" class="col s12" align="center">
+                    <div id="success" class="d-none">
+                        <h3 class="green-text text-darken-2"><i class="material-icons large left">check</i> Token de acesso validado com sucesso!</h3>
+                        <div class="divider"></div>
+                        <br>
+                        <div id="response-success" class="card-title">
+                            <div class="card grey lighten-3 p-10 green-text text-darken-2">
+                                ATENÇÃO
+                                <br>
+                                <b>Não finalize esta aplicação e nem remova o token enquanto a sua sessão estiver ativa no WebTv, caso contrário ela será finalizada.</b>
+                            </div>
+                            Clique no botão abaixo para acessar o webtv.
+                            <br>
+                            <a id="webtv" href="" target="_blank" class="btn green darken-2 waves-effect waves-light">
+								Ir para o WebTv
+							</a>
+                        </div>
+                    </div>
+                    <div id="fail" class="d-none">
+                        <h3 class="red-text text-darken-4"><i class="material-icons large left">highlight_off</i> Não foi possível validar o token de acesso!</h3>
+                        <div class="divider"></div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="card-title">
+                            Por favor verifique se o token está conectado corretamente e tente novamente.<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings" class="row d-none">
+                <div class="col s6">
+                    <label for="portPath" class="control-label">Port Path:</label>
+                    <select id="portPath" class="form-control browser-default"></select>
+                </div>
+                <div class="col s6">
+                    <label for="baudrate">Baud Rate:</label>
+                    <select id="baudrate" class="form-control browser-default">
+						<option value="9600" selected>9600</option>
+					</select>
+                </div>
+                <div class="col s12 center">
+                    <button id="connect" class="btn btn-large waves-effect waves-light blue">Validar</button>
+                </div>
+            </div>
+
+            <div id="connected-container" class="row d-none">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="input-group center">
+                            <input id="input" type="text" class="form-control" value="M" />
+                            <span class="input-group-btn">
+								<button id="send" class="btn btn-large waves-effect waves-light">Enviar</button>
+							</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <label for="output">Output:</label>
+                        <textarea id="output" class="form-control" rows="20"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
